@@ -1,6 +1,5 @@
 package com.nazim;
 
-import com.darkprograms.speech.translator.GoogleTranslate;
 import org.bson.Document;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
@@ -123,7 +122,7 @@ public class BotCommands {
         try {
             // Remove emojis before translation
             String cleanText = textToTranslate.replaceAll("[^\\p{L}\\p{N}\\p{P}\\s]", "");
-            translatedText = GoogleTranslate.translate(language, cleanText);
+            translatedText = Translate.translate(language, cleanText);
             // Replace escaped newlines with actual newlines
             translatedText = translatedText.replace("\\n", "\n");
         } catch (IOException e) {
@@ -145,7 +144,7 @@ public class BotCommands {
         try {
             // Remove emojis before translation
             String cleanText = textToTranslate.replaceAll("[^\\p{L}\\p{N}\\p{P}\\s]", "");
-            translatedText = GoogleTranslate.translate(language, cleanText);
+            translatedText = Translate.translate(language, cleanText);
             // Replace escaped newlines with actual newlines
             translatedText = translatedText.replace("\\n", "\n");
         } catch (IOException e) {
