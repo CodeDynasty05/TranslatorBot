@@ -125,7 +125,6 @@ public final class Translate {
                 return false;
             }
         }
-
         return true;
     }
 
