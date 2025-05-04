@@ -4,11 +4,12 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 
 public class MongoDBClient {
+    private static final String DB_URI = System.getenv("DB_URI");
     private static final MongoClient mongoClient;
 
     static {
         java.util.logging.Logger.getLogger("org.mongodb.driver").setLevel(java.util.logging.Level.OFF);
-        MongoClientURI uri = new MongoClientURI("mongodb+srv://Nazim:4AW9rEXXDZy6AUaZ@nazim.234oayu.mongodb.net/?retryWrites=true&w=majority&appName=Nazim");
+        MongoClientURI uri = new MongoClientURI(DB_URI);
         mongoClient = new MongoClient(uri);
     }
 
